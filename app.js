@@ -32,6 +32,23 @@ function limpiarCaja(){
     document.querySelector("#amigo").value= "";
 }
 
+//Función para sortear al amigo
+function sortearAmigo(){
+    // Validar que haya amigos disponibles
+    if (amigos.length === 0) {
+        alert("No hay amigos en la lista. Agrega al menos uno para sortear.");
+        return; // salimos si no hay nada que sortear
+    }
+    //Obtener amigo secreto con random (ARREGLAR!! QUE SE ESTÁ MOSTRANDO EL ÍNDICE)
+    let indiceAleatorio = Math.floor(Math.random()*amigos.length);
+    let amigoSorteado = amigos[indiceAleatorio];
+
+    //Mostrar al amigo secreto
+    if (amigoSorteado){
+        asignarTextoElemento("h2",`Tu amigo secreto es ${amigoSecreto}!!`);
+    }
+}
+
 //Funcion para las condiciones iniciales en el juego
 
 function condicionesIniciales() {
