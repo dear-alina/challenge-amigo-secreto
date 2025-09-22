@@ -39,7 +39,7 @@ function sortearAmigo(){
         alert("No hay amigos en la lista. Agrega al menos uno para sortear.");
         return; // salimos si no hay nada que sortear
     }
-    //Obtener amigo secreto con random (ARREGLAR!! QUE SE ESTÁ MOSTRANDO EL ÍNDICE)
+    //Obtener amigo secreto con random (CORREGIDO!)
     let indiceAleatorio = Math.floor(Math.random()*amigos.length);
     let amigoSorteado = amigos[indiceAleatorio];
 
