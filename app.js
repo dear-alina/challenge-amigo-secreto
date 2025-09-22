@@ -51,7 +51,7 @@ function sortearAmigo(){
         */
     //Segunda versión:
     document.getElementById("resultado").innerHTML = 
-    `🎉 ¡Tu amigo secreto es <strong>${amigoSorteado}</strong>😁!!`;
+    `🎉 ¡Tu amigo secreto es <strong>${amigoSorteado}</strong> 😁!!`;
 }
 
 //Función para mostrar la lista de amigos
