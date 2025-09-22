@@ -71,5 +71,4 @@ function mostrarListaAmigos() {
 function condicionesIniciales() {
     asignarTextoElemento("h2","Ingresa el nombre de tus amigos uwu");  
 }
-
 condicionesIniciales();
