@@ -44,16 +44,32 @@ function sortearAmigo(){
     let amigoSorteado = amigos[indiceAleatorio];
 
     //Mostrar al amigo secreto
+    /*Primera versión:
     if (amigoSorteado){
-        asignarTextoElemento("h2",`Tu amigo secreto es ${amigoSecreto}!!`);
+        asignarTextoElemento("h2",`Tu amigo secreto es ${amigoSorteado}😁!!`);
     }
+        */
+    //Segunda versión:
+    document.getElementById("resultado").innerHTML = 
+    `🎉 ¡Tu amigo secreto es <strong>${amigoSorteado}</strong>😁!!`;
+}
+
+//Función para mostrar la lista de amigos
+function mostrarListaAmigos() {
+    let listaAmigos = document.getElementById("listaAmigos");
+
+    listaAmigos.innerHTML= "";
+
+    for(let i =0;  i< amigos.length; i++){
+        let elementoLista = document.createElement("li");
+        elementoLista.textContent= amigos[i];
+        listaAmigos.appendChild(elementoLista);
+    } 
 }
 
 //Funcion para las condiciones iniciales en el juego
-
 function condicionesIniciales() {
-    asignarTextoElemento("h2","Ingresa el nombre de tus amigos uwu");
-    agregarAmigos();  
+    asignarTextoElemento("h2","Ingresa el nombre de tus amigos uwu");  
 }
 
 condicionesIniciales();
