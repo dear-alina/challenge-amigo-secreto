@@ -17,11 +17,17 @@ function agregarAmigos(){
     let nombre = ingresarNombre.value;
    //Funcion que valide que el nombre no esté vacío
     if(nombre != ""){
+        //En esta linea se agregó código para verificar si el nombre ya existe en la lista
+        if(amigos.includes(nombre)){
+            asignarTextoElemento("h2",`${nombre} ya se encuentra en la lista :)`);
+            limpiarCaja();
+            return;
+        }
         asignarTextoElemento("h2","Agrega a tus amigos que falten ✨");
     } else{ 
             alert("Por favor, ingresa un nombre unu");
             return;
-        }   
+        }
     amigos.push(nombre); //Ingresa los valores en la lista
     console.log(amigos);
     limpiarCaja();
@@ -34,11 +40,12 @@ function limpiarCaja(){
 
 //Función para sortear al amigo
 function sortearAmigo(){
-    // Validar que haya amigos disponibles
+    /* Validar que haya amigos disponibles
     if (amigos.length === 0) {
         alert("No hay amigos en la lista. Agrega al menos uno para sortear.");
         return; // salimos si no hay nada que sortear
     }
+        */
     //Obtener amigo secreto con random (CORREGIDO!)
     let indiceAleatorio = Math.floor(Math.random()*amigos.length);
     let amigoSorteado = amigos[indiceAleatorio];
