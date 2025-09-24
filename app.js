@@ -8,12 +8,11 @@ function asignarTextoElemento(elemento,texto) {
     elementoHTML.innerHTML = texto;
     return;
 }
-
 //Función para validar y almacenar el nombre de los amigos ingresados
 function agregarAmigos(){
     //Ingreso de nombres
     let  ingresarNombre= document.getElementById("amigo");
-    //Obtener nmbre ingresado
+    //Obtener nombre ingresado
     let nombre = ingresarNombre.value;
    //Funcion que valide que el nombre no esté vacío
     if(nombre != ""){
@@ -37,30 +36,21 @@ function agregarAmigos(){
 function limpiarCaja(){
     document.querySelector("#amigo").value= "";
 }
-
 //Función para sortear al amigo
 function sortearAmigo(){
-    /* Validar que haya amigos disponibles
-    if (amigos.length === 0) {
-        alert("No hay amigos en la lista. Agrega al menos uno para sortear.");
-        return; // salimos si no hay nada que sortear
-    }
-        */
-    //Obtener amigo secreto con random (CORREGIDO!)
+    //Obtener amigo secreto con random
     let indiceAleatorio = Math.floor(Math.random()*amigos.length);
     let amigoSorteado = amigos[indiceAleatorio];
-
     //Mostrar al amigo secreto
     /*Primera versión:
     if (amigoSorteado){
         asignarTextoElemento("h2",`Tu amigo secreto es ${amigoSorteado}😁!!`);
     }
-        */
+    */
     //Segunda versión:
     document.getElementById("resultado").innerHTML = 
     `🎉 ¡Tu amigo secreto es <strong>${amigoSorteado}</strong> 😁!!`;
 }
-
 //Función para mostrar la lista de amigos
 function mostrarListaAmigos() {
     let listaAmigos = document.getElementById("listaAmigos");
@@ -73,7 +63,6 @@ function mostrarListaAmigos() {
         listaAmigos.appendChild(elementoLista);
     } 
 }
-
 //Funcion para las condiciones iniciales en el juego
 function condicionesIniciales() {
     asignarTextoElemento("h2","Ingresa el nombre de tus amigos uwu");  
